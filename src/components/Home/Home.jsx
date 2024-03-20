@@ -39,6 +39,7 @@ function Home(){
         <h2>Amazing React & Vite Webshop</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, fuga, nemo! A ad, autem cupiditate debitis eius exercitationem fuga in libero non obcaecati recusandae repudiandae temporibus vel veniam veritatis voluptates!</p>
         <ProductList products={productList} />
+        <img width={700} src={'https://images.unsplash.com/photo-1707343848610-16f9afe1ae23'}/>
     </div>
   )
 }
