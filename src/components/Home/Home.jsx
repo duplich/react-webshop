@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import reactLogo from '../../../src/assets/react.svg';
 import * as jsonImages from './images.json'
+import viteLogo from '../../../public/vite.svg'
 
 const images = {
   viteLogo: '/src/assets/vite.svg',
@@ -30,7 +31,7 @@ function Home(){
 
   return(
     <div className={'home'}>
-        <img src={images.viteLogo} alt={"SVG LOGO REACT"}
+        <img src={viteLogo} alt={"SVG LOGO REACT"}
              height={200}
              width={200}
              style={{padding: 20}}
