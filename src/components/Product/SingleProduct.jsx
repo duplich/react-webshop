@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
 import { Card, Button } from 'react-bootstrap'
 import { useEffect } from 'react'
+import { toast } from 'react-hot-toast'
 
 function SingleProduct({product}){
+
+  function addToCartHandler(event){
+    event.preventDefault();
+    toast.success("Product added to cart. Yay!")
+  }
   // If this componet has props.product then use props
   // If not populate product with API Request to the single product
   console.log("product", product)
@@ -15,7 +21,7 @@ function SingleProduct({product}){
           {product.description}
         </Card.Text>
         {/*<Link to={"/product/"+product.id}> Detail View </Link>*/}
-        <Button as={Link} to={"/product/"+product.id} variant="primary">Detail view</Button>
+        <Button onClick={(event)=> addToCartHandler(event)} as={Link} to={"/product/"+product.id} variant="primary">Add to cart</Button>
       </Card.Body>
     </Card>
   )

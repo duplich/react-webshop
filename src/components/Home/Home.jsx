@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from '../../../src/assets/react.svg';
 import * as jsonImages from './images.json'
 import viteLogo from '../../../public/vite.svg'
+import { toast } from 'react-hot-toast'
 
 // const HOST = process.env.HOST;
 const HOST = import.meta.env.VITE_HOST;
@@ -42,6 +43,7 @@ function Home(){
         />
         <h2>Amazing React & Vite Webshop</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, fuga, nemo! A ad, autem cupiditate debitis eius exercitationem fuga in libero non obcaecati recusandae repudiandae temporibus vel veniam veritatis voluptates!</p>
+      <button onClick={() => toast.success("Product successfully added to basked")}> Fire Notification</button>
         <ProductList products={productList} />
         <img width={700} src={'https://images.unsplash.com/photo-1707343848610-16f9afe1ae23'}/>
     </div>
