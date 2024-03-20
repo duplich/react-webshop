@@ -1,6 +1,8 @@
 import { Link, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
+const HOST = import.meta.env.HOST;
+
 function DetailedProductView(){
   const urlParams = useParams()
   const [product, setProduct] = useState({});
@@ -10,7 +12,7 @@ function DetailedProductView(){
 
   useEffect(() => {
     // MAKE A REQUESTO TOWARDS WEBSHOP API
-    fetch('https://dummyjson.com/products/'+URLProductID)
+    fetch(`${HOST}/products/${URLProductID}`)
       .then(res => res.json())
       .then(json => {
         console.log("Product => ", json)

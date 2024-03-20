@@ -3,11 +3,15 @@ import reactLogo from '../../../src/assets/react.svg';
 import * as jsonImages from './images.json'
 import viteLogo from '../../../public/vite.svg'
 
+// const HOST = process.env.HOST;
+const HOST = import.meta.env.VITE_HOST;
+
 const images = {
   viteLogo: '/src/assets/vite.svg',
   unsplashImage: 'https://i.imgur.com/3wRX5S0.jpeg'
 }
 
+console.log("current HOST .env variable", HOST)
 console.log("jsonImages", jsonImages);
 
 import './Home.css'
@@ -20,7 +24,7 @@ function Home(){
 
   useEffect(() => {
     // MAKE A REQUESTO TOWARDS WEBSHOP API
-    fetch('https://dummyjson.com/products?limit=6')
+    fetch(`${HOST}/products?limit=6`)
       .then(res => res.json())
       .then(json => {
         console.log("Products => ", json.products)
